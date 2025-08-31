@@ -134,5 +134,37 @@
       "respuesta_correcta": "Que Dios tiene un propósito redentor incluso en las situaciones más dolorosas y que Él puede usar el mal para lograr un bien mayor.",
       "reflexion": "Romanos 8:28 no es una promesa de que las cosas malas no nos pasarán, sino una garantía de que Dios puede obrar en ellas para nuestra santificación y Su gloria, si permanecemos en Él."
     }
+  ],
+    
+     "logros": [
+    {
+      "id": "disciplina_de_niño",
+      "titulo": "Discípulo Principiante",
+      "descripcion": "Completa el nivel de 'Niños Pequeños' con al menos 3 preguntas correctas.",
+      "criterios": {
+        "nivel": "ninos_no_lectores",
+        "puntuacion_minima": 3
+      }
+    },
+    {
+      "id": "sabio_de_la_biblia",
+      "titulo": "Sabio de la Biblia",
+      "descripcion": "Completa el nivel de 'Adultos' con todas las preguntas correctas (5 de 5).",
+      "criterios": {
+        "nivel": "adultos",
+        "puntuacion_minima": 5
+      }
+    },
+    {
+      "id": "estudiante_aplicado",
+      "titulo": "Estudiante Aplicado",
+      "descripcion": "Completa el nivel de 'Niños Lectores' con todas las preguntas correctas (5 de 5).",
+      "criterios": {
+        "nivel": "ninos_lectores",
+        "puntuacion_minima": 5
+      }
+    }
   ]
+}
+    
 }

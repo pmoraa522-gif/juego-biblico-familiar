@@ -2,6 +2,9 @@
 // VARIABLES Y ELEMENTOS HTML
 // ====================================================================================
 
+// Variable para almacenar los logros desbloqueados
+let logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
+
 // Almacena los datos de las preguntas después de cargarlos desde el archivo JSON
 let datosBiblicos;
 
@@ -68,6 +71,10 @@ function iniciarJuego(nivel) {
     indicePreguntaActual = 0;
     score = 0;
 
+    // Actualiza el texto de la puntuación para que se reinicie en la pantalla
+    document.getElementById('puntuacion-actual').textContent = `Puntos: 0`; // <-- ¡Esta es la línea que falta!
+
+    
     // Mezcla las preguntas para que aparezcan en un orden aleatorio
     preguntasActuales = preguntasActuales.sort(() => Math.random() - 0.5);
 
@@ -159,6 +166,8 @@ function terminarJuego() {
     preguntaTitulo.textContent = '¡Juego terminado!';
     preguntaTexto.textContent = `Has respondido correctamente a ${score} de ${preguntasActuales.length} de 5 preguntas.`; // Muestra la puntuación final
     
+    // Llama a la función de verificación de logros aquí
+    verificarLogros();
     
     // Crea el botón para volver al inicio
     const btnReinicio = document.createElement('button');
@@ -172,6 +181,38 @@ function terminarJuego() {
         juegoView.classList.add('hidden');
         inicioView.classList.remove('hidden');
     });
+}
+
+function verificarLogros() {
+    // Obtén los logros del archivo de datos
+    const logros = datosBiblicos.logros;
+    let logroDesbloqueado = null;
+
+    // Recorre todos los logros para ver si alguno se ha cumplido
+    for (const logro of logros) {
+        if (
+            score >= logro.criterios.puntuacion_minima &&
+            preguntasActuales === datosBiblicos[logro.criterios.nivel] &&
+            !logrosDesbloqueados.includes(logro.id) // Asegúrate de que no haya sido desbloqueado antes
+        ) {
+            logrosDesbloqueados.push(logro.id); // Añade el logro a la lista
+            localStorage.setItem('logrosDesbloqueados', JSON.stringify(logrosDesbloqueados)); // Guarda la lista
+            logroDesbloqueado = logro; // Guarda el logro para mostrarlo
+            break; // Sal del bucle ya que solo se puede desbloquear un logro por partida
+        }
+    }
+    
+    // Si un logro fue desbloqueado, muéstralo
+    if (logroDesbloqueado) {
+        const logroContainer = document.createElement('div');
+        logroContainer.classList.add('logro-container');
+        logroContainer.innerHTML = `
+            <h4>¡Logro Desbloqueado!</h4>
+            <p>${logroDesbloqueado.titulo}</p>
+            <p>${logroDesbloqueado.descripcion}</p>
+        `;
+        opcionesContainer.appendChild(logroContainer);
+    }
 }
 
 // ====================================================================================
