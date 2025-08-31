@@ -39,6 +39,38 @@
       "respuesta_correcta": "Multiplicó el pan y el pescado",
       "imagen_pregunta": "multiplicacion_panes_peces.png",
       "leccion": "Con Jesús, lo poco que tenemos puede ser más que suficiente."
+    },
+    {
+      "id": "6",
+      "pregunta": "Dios creó el mundo en seis días. ¿Qué creó Dios en el primer día?",
+      "opciones": ["Los animales", "La luz", "Las plantas"],
+      "respuesta_correcta": "La luz",
+      "imagen_pregunta": "creacion_luz.png",
+      "leccion": "Dios es el creador de todo lo que existe."
+    },
+    {
+      "id": "7",
+      "pregunta": "Jesús nació en un lugar muy humilde. ¿Dónde nació el niño Jesús?",
+      "opciones": ["En un palacio", "En un establo", "En un hospital"],
+      "respuesta_correcta": "En un establo",
+      "imagen_pregunta": "nacimiento_jesus.png",
+      "leccion": "Jesús vino al mundo con humildad para salvarnos."
+    },
+    {
+      "id": "8",
+      "pregunta": "Daniel era un hombre que oraba a Dios todos los días. Por eso, sus enemigos lo echaron a un foso con estos animales hambrientos. ¿Qué animales eran?",
+      "opciones": ["Leones", "Tigres", "Osos"],
+      "respuesta_correcta": "Leones",
+      "imagen_pregunta": "daniel_leones.png",
+      "leccion": "Dios protege a quienes confían en Él."
+    },
+    {
+      "id": "9",
+      "pregunta": "Jesús hizo muchos milagros. ¿A qué persona Jesús devolvió la vida después de cuatro días de haber muerto?",
+      "opciones": ["A Lázaro", "A Juan", "A Pedro"],
+      "respuesta_correcta": "A Lázaro",
+      "imagen_pregunta": "resurreccion_lazaro.png",
+      "leccion": "Jesús tiene poder sobre la vida y la muerte."
     }
   ],
   "ninos_lectores": [
@@ -76,6 +108,41 @@
       "opciones": ["Que Dios gobierne nuestro corazón y el mundo.", "Que Dios haga una fiesta en el cielo.", "Que un rey de verdad venga a la Tierra."],
       "respuesta_correcta": "Que Dios gobierne nuestro corazón y el mundo.",
       "versiculo_clave": "Mateo 6:9-13"
+    },
+    {
+      "id": "15",
+      "pregunta": "En la parábola del buen samaritano, ¿qué hizo el samaritano cuando encontró a un hombre herido en el camino?",
+      "opciones": ["Pasó de largo como los demás.", "Lo ayudó y cuidó de él.", "Llamó a la policía."],
+      "respuesta_correcta": "Lo ayudó y cuidó de él.",
+      "versiculo_clave": "Lucas 10:30-37"
+    },
+    {
+      "id": "16",
+      "pregunta": "¿Cuál fue la señal que Dios le dio a Noé de que nunca más destruiría la tierra con un diluvio?",
+      "opciones": ["Un arcoíris en las nubes.", "Una paloma con una rama de olivo.", "Una estrella brillante."],
+      "respuesta_correcta": "Un arcoíris en las nubes.",
+      "versiculo_clave": "Génesis 9:13"
+    },
+    {
+      "id": "17",
+      "pregunta": "¿Qué le prometió Dios a Abraham sobre sus descendientes?",
+      "opciones": ["Que serían pocos como las estrellas.", "Que serían tan numerosos como las estrellas del cielo.", "Que vivirían siempre en la misma tierra."],
+      "respuesta_correcta": "Que serían tan numerosos como las estrellas del cielo.",
+      "versiculo_clave": "Génesis 15:5"
+    },
+    {
+      "id": "18",
+      "pregunta": "¿Qué hicieron los amigos de Daniel cuando se negaron a adorar la estatua de oro del rey Nabucodonosor?",
+      "opciones": ["Huyeron del reino.", "Se escondieron en sus casas.", "Fueron echados en un horno de fuego."],
+      "respuesta_correcta": "Fueron echados en un horno de fuego.",
+      "versiculo_clave": "Daniel 3:20-21"
+    },
+    {
+      "id": "19",
+      "pregunta": "¿Qué le dijo Jesús a la mujer samaritana junto al pozo de Jacob?",
+      "opciones": ["Que le diera de beber.", "Que podía darle agua viva.", "Que regresara a su casa."],
+      "respuesta_correcta": "Que podía darle agua viva.",
+      "versiculo_clave": "Juan 4:10"
     }
   ],
   "adultos": [
@@ -92,7 +159,7 @@
     },
     {
       "id": "21",
-      "pregunta": "Según Filipenses 2:3, el apóstol Pablo nos exhorta a no hacer nada por contienda o vanagloria, sino con humildad. ¿Cómo podemos aplicar este principio para cultivar la humildad en nuestras relaciones diarias?",
+      "pregunta": "Según Filipenses 2:3, el apóstol Pablo nos exhorta a no hacer nada por contienda o vanagloria, sino con humildidad. ¿Cómo podemos aplicar este principio para cultivar la humildad en nuestras relaciones diarias?",
       "opciones": [
         "Pensando que somos mejores que los demás.",
         "Poniendo los intereses de los demás antes que los nuestros y reconociendo nuestras propias debilidades.",
@@ -133,10 +200,64 @@
       ],
       "respuesta_correcta": "Que Dios tiene un propósito redentor incluso en las situaciones más dolorosas y que Él puede usar el mal para lograr un bien mayor.",
       "reflexion": "Romanos 8:28 no es una promesa de que las cosas malas no nos pasarán, sino una garantía de que Dios puede obrar en ellas para nuestra santificación y Su gloria, si permanecemos en Él."
+    },
+    {
+      "id": "25",
+      "pregunta": "Según Gálatas 5:22-23, ¿cuáles son los nueve frutos del Espíritu Santo?",
+      "opciones": [
+        "Amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza",
+        "Sabiduría, entendimiento, consejo, fortaleza, ciencia, piedad, temor de Dios",
+        "Profecía, servicio, enseñanza, exhortación, repartir, presidir, misericordia"
+      ],
+      "respuesta_correcta": "Amor, gozo, paz, paciencia, benignidad, bondad, fe, mansedumbre, templanza",
+      "reflexion": "Los frutos del Espíritu son evidencias de la obra transformadora de Dios en nuestras vidas. No son esfuerzos humanos, sino resultados de permitir que el Espíritu Santo nos guíe y moldee."
+    },
+    {
+      "id": "26",
+      "pregunta": "En el Sermón del Monte, Jesús menciona varias bienaventuranzas. ¿Qué significa 'bienaventurados los pobres en espíritu, porque de ellos es el reino de los cielos'?",
+      "opciones": [
+        "Que Dios favorece a las personas con pocos recursos económicos.",
+        "Que quienes reconocen su necesidad espiritual y dependen completamente de Dios heredarán Su reino.",
+        "Que las personas tristes y deprimidas recibirán consuelo en el cielo."
+      ],
+      "respuesta_correcta": "Que quienes reconocen su necesidad espiritual y dependen completamente de Dios heredarán Su reino.",
+      "reflexion": "Ser 'pobre en espíritu' significa reconocer nuestra bancarrota espiritual y nuestra total dependencia de Dios. Es la actitud opuesta al orgullo y la autosuficiencia."
+    },
+    {
+      "id": "27",
+      "pregunta": "¿Qué significa la expresión 'Jehová es mi pastor' en el Salmo 23?",
+      "opciones": [
+        "Que Dios cuida de nosotros como un pastor cuida de sus ovejas.",
+        "Que debemos trabajar como pastores para servir a Dios.",
+        "Que las ovejas son importantes para Dios."
+      ],
+      "respuesta_correcta": "Que Dios cuida de nosotros como un pastor cuida de sus ovejas.",
+      "reflexion": "Esta metáfora del pastor representa la provisión, protección, guía y cuidado constante de Dios hacia nosotros. Él conoce nuestras necesidades y nos conduce por caminos de bien."
+    },
+    {
+      "id": "28",
+      "pregunta": "Según Efesios 6:11, ¿qué significa 'vestirse de toda la armadura de Dios'?",
+      "opciones": [
+        "Usar ropa especial para la batalla espiritual.",
+        "Apropiarse de la protección espiritual que Dios provee contra las artimañas del diablo.",
+        "Prepararse físicamente para enfrentar dificultades."
+      ],
+      "respuesta_correcta": "Apropiarse de la protección espiritual que Dios provee contra las artimañas del diablo.",
+      "reflexion": "La armadura de Dios representa las verdades espirituales que nos protegen en la batalla contra el mal: la verdad, la justicia, el evangelio, la fe, la salvación y la Palabra de Dios."
+    },
+    {
+      "id": "29",
+      "pregunta": "En 1 Corintios 15:3-4, Pablo resume el evangelio esencial. ¿Qué elementos incluye este resumen?",
+      "opciones": [
+        "Que Cristo nació de una virgen y realizó milagros.",
+        "Que Cristo murió por nuestros pecados, fue sepultado y resucitó al tercer día.",
+        "Que Cristo ascendió al cielo y vendrá otra vez."
+      ],
+      "respuesta_correcta": "Que Cristo murió por nuestros pecados, fue sepultado y resucitó al tercer día.",
+      "reflexion": "El núcleo del evangelio es la muerte, sepultura y resurrección de Jesús. Su muerte fue sacrificial por nuestros pecados, y Su resurrección confirmó Su victoria sobre la muerte y Su identidad como Hijo de Dios."
     }
   ],
-    
-     "logros": [
+  "logros": [
     {
       "id": "disciplina_de_niño",
       "titulo": "Discípulo Principiante",
@@ -163,8 +284,14 @@
         "nivel": "ninos_lectores",
         "puntuacion_minima": 5
       }
+    },
+    {
+      "id": "explorador_biblico",
+      "titulo": "Explorador Bíblico",
+      "descripcion": "Completa al menos un nivel en cada categoría.",
+      "criterios": {
+        "niveles_completados": ["ninos_no_lectores", "ninos_lectores", "adultos"]
+      }
     }
   ]
 }
-    
-
