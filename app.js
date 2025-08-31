@@ -10,6 +10,7 @@ let preguntasActuales = [];
 let indicePreguntaActual = 0;
 let score = 0;
 
+
 // Referencias a los elementos de las vistas en el HTML
 const inicioView = document.getElementById('inicio-view');
 const juegoView = document.getElementById('juego-view');
@@ -134,6 +135,9 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
         mensajeFeedback.textContent = `Incorrecto. La respuesta era: ${preguntaActual.respuesta_correcta}`;
         mensajeFeedback.classList.add('incorrecto');
     }
+    
+    // Muestra la puntuación actual
+    document.getElementById('puntuacion-actual').textContent = `Puntos: ${score}`;
 
     // Avanza a la siguiente pregunta después de un breve retraso
     setTimeout(() => {
@@ -153,7 +157,8 @@ function terminarJuego() {
 
     // Muestra el mensaje final
     preguntaTitulo.textContent = '¡Juego terminado!';
-    preguntaTexto.textContent = `Has respondido correctamente a ${score} de ${preguntasActuales.length} preguntas.`;
+    preguntaTexto.textContent = `Has respondido correctamente a ${score} de ${preguntasActuales.length} de 5 preguntas.`; // Muestra la puntuación final
+    
     
     // Crea el botón para volver al inicio
     const btnReinicio = document.createElement('button');
