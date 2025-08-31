@@ -2,14 +2,6 @@
 // VARIABLES Y ELEMENTOS HTML
 // ====================================================================================
 
-// Variable para almacenar los logros desbloqueados
-let logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
-try {
-    logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
-} catch (e) {
-    console.log('Error al cargar logros desde localStorage:', e);
-}
-
 // Almacena los datos de las preguntas después de cargarlos desde el archivo JSON
 let datosBiblicos;
 
@@ -17,6 +9,14 @@ let datosBiblicos;
 let preguntasActuales = [];
 let indicePreguntaActual = 0;
 let score = 0;
+
+/ Variable para almacenar los logros desbloqueados
+let logrosDesbloqueados = [];
+try {
+    logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
+} catch (e) {
+    console.log('Error al cargar logros desde localStorage:', e);
+}
 
 
 // Referencias a los elementos de las vistas en el HTML
@@ -34,6 +34,7 @@ const preguntaTexto = document.getElementById('pregunta-texto');
 const preguntaImagen = document.getElementById('pregunta-imagen');
 const opcionesContainer = document.getElementById('opciones-container');
 const mensajeFeedback = document.getElementById('mensaje-feedback');
+const puntuacionActual = document.getElementById('puntuacion-actual');
 
 // ====================================================================================
 // FUNCIONES PRINCIPALES
