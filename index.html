@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos Bíblicos en Familia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Aprende con la Biblia</h1>
+    </header>
+
+    <main id="app-container">
+        <div id="inicio-view" class="view">
+            <h2>Elige tu nivel</h2>
+            <button id="btn-ninos-no-lectores" class="btn">Niños Pequeños</button>
+            <button id="btn-ninos-lectores" class="btn">Niños Lectores</button>
+            <button id="btn-adultos" class="btn">Adultos</button>
+        </div>
+
+        <div id="juego-view" class="view hidden">
+            <h3 id="pregunta-titulo"></h3>
+            <div id="pregunta-imagen-container">
+                <img id="pregunta-imagen" src="" alt="Ilustración de la pregunta">
+            </div>
+            <p id="pregunta-texto"></p>
+            <div id="opciones-container">
+                </div>
+            <p id="mensaje-feedback" class="feedback"></p>
+        </div>
+        
+    </main>
+
+    <script src="biblia_data.json"></script>
+    <script src="app.js"></script>
+</body>
+</html>

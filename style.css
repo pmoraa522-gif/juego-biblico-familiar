@@ -1,0 +1,69 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Azul muy claro */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.view {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos de botones */
+.btn {
+    display: block;
+    width: 80%;
+    padding: 15px;
+    margin: 10px auto;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el juego */
+#pregunta-imagen {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#opciones-container .btn {
+    background-color: #008CBA; /* Azul */
+}
+
+/* Estilos de feedback */
+.feedback {
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.correcto {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.incorrecto {
+    background-color: #f8d7da;
+    color: #721c24;
+}

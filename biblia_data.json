@@ -1,0 +1,138 @@
+{
+  "ninos_no_lectores": [
+    {
+      "id": "1",
+      "pregunta": "Noé, un hombre que amaba mucho a Dios, recibió la misión de construir un gran barco. ¿Sabes cómo se le llama a ese gran barco que construyó?",
+      "opciones": ["Una canoa", "Un arca", "Un submarino"],
+      "respuesta_correcta": "Un arca",
+      "imagen_pregunta": "arca_con_animales.png",
+      "leccion": "La historia de Noé nos enseña sobre la obediencia y la confianza en Dios."
+    },
+    {
+      "id": "2",
+      "pregunta": "Un pequeño pastor llamado David se enfrentó a un gigante muy grande llamado Goliat. David solo tenía una honda y su fe en Dios. ¿Quién fue el valiente pastor que ganó la batalla?",
+      "opciones": ["Sansón", "Saúl", "David"],
+      "respuesta_correcta": "David",
+      "imagen_pregunta": "david_y_goliat.png",
+      "leccion": "No importa cuán grande sea el desafío, con Dios somos valientes y fuertes."
+    },
+    {
+      "id": "3",
+      "pregunta": "Jonás no quería obedecer a Dios y se subió a un barco para huir. Pero una gran tormenta lo tiró al agua, y fue tragado por un animal muy grande. ¿Qué animal se lo tragó?",
+      "opciones": ["Un león", "Un pez muy grande", "Un dragón"],
+      "respuesta_correcta": "Un pez muy grande",
+      "imagen_pregunta": "jonas_y_la_ballena.png",
+      "leccion": "Dios siempre nos da una segunda oportunidad para obedecerle."
+    },
+    {
+      "id": "4",
+      "pregunta": "Moisés fue un bebé que su mamá puso en una canasta en el río para que se salvara. ¿Qué gran milagro hizo Moisés cuando creció para que su pueblo pudiera escapar de sus enemigos?",
+      "opciones": ["Caminó sobre el agua", "Abrió el Mar Rojo", "Multiplicó la comida"],
+      "respuesta_correcta": "Abrió el Mar Rojo",
+      "imagen_pregunta": "moises_mar_rojo.png",
+      "leccion": "Dios nos salva y nos protege de los peligros."
+    },
+    {
+      "id": "5",
+      "pregunta": "Jesús es el Hijo de Dios. Un día, con solo cinco panes y dos peces, ¿qué hizo para que más de 5,000 personas pudieran comer?",
+      "opciones": ["Multiplicó el pan y el pescado", "Pidió a la gente que compartiera", "Compró más comida"],
+      "respuesta_correcta": "Multiplicó el pan y el pescado",
+      "imagen_pregunta": "multiplicacion_panes_peces.png",
+      "leccion": "Con Jesús, lo poco que tenemos puede ser más que suficiente."
+    }
+  ],
+  "ninos_lectores": [
+    {
+      "id": "10",
+      "pregunta": "Jesús nos enseñó con historias llamadas 'parábolas'. En la parábola del hijo pródigo, el hijo menor se fue y gastó todo su dinero, pero al regresar, su padre lo recibió con una fiesta. ¿Qué nos enseña esta historia sobre el amor de Dios?",
+      "opciones": ["Que Dios nos castiga por nuestros errores.", "Que Dios nos perdona y celebra cuando regresamos a Él.", "Que es malo gastar todo nuestro dinero."],
+      "respuesta_correcta": "Que Dios nos perdona y celebra cuando regresamos a Él.",
+      "versiculo_clave": "Lucas 15:11-32"
+    },
+    {
+      "id": "11",
+      "pregunta": "En el Sermón del Monte, Jesús dijo que debíamos ser 'sal de la tierra' y 'luz del mundo'. ¿Qué crees que quiso decir Jesús con 'luz del mundo'?",
+      "opciones": ["Que debemos brillar en la oscuridad.", "Que debemos ser un buen ejemplo para los demás.", "Que debemos usar lámparas."],
+      "respuesta_correcta": "Que debemos ser un buen ejemplo para los demás.",
+      "versiculo_clave": "Mateo 5:14-16"
+    },
+    {
+      "id": "12",
+      "pregunta": "Cuando Jesús fue a la tumba de Lázaro, él le dijo a Marta: 'Yo soy la resurrección y la vida; el que cree en mí, aunque esté muerto, vivirá'. ¿Qué verdad fundamental sobre la vida después de la muerte nos revela Jesús en este pasaje?",
+      "opciones": ["Que la vida se acaba cuando morimos.", "Que los que creen en Él tendrán vida eterna.", "Que la fe solo importa en esta vida."],
+      "respuesta_correcta": "Que los que creen en Él tendrán vida eterna.",
+      "versiculo_clave": "Juan 11:25-26"
+    },
+    {
+      "id": "13",
+      "pregunta": "El apóstol Pablo, en 1 Corintios 13, nos habla sobre el amor. ¿Qué nos dice Pablo que es más importante que hablar en lenguas o tener todo el conocimiento?",
+      "opciones": ["La fe y la esperanza.", "La caridad y el perdón.", "El amor."],
+      "respuesta_correcta": "El amor.",
+      "versiculo_clave": "1 Corintios 13:13"
+    },
+    {
+      "id": "14",
+      "pregunta": "Jesús nos enseñó a orar con el Padrenuestro. En esta oración, le pedimos a Dios que 'venga tu reino'. ¿Qué significa pedirle a Dios que Su reino venga a la Tierra?",
+      "opciones": ["Que Dios gobierne nuestro corazón y el mundo.", "Que Dios haga una fiesta en el cielo.", "Que un rey de verdad venga a la Tierra."],
+      "respuesta_correcta": "Que Dios gobierne nuestro corazón y el mundo.",
+      "versiculo_clave": "Mateo 6:9-13"
+    }
+  ],
+  "adultos": [
+    {
+      "id": "20",
+      "pregunta": "La Biblia nos revela que Dios es misericordioso y lleno de gracia. ¿Cuál es la principal diferencia entre la 'misericordia' de Dios y su 'gracia'?",
+      "opciones": [
+        "La misericordia es el perdón de los pecados, y la gracia es una recompensa merecida.",
+        "La misericordia es no darnos lo que merecemos (el castigo), y la gracia es darnos lo que no merecemos (el favor y el regalo de la salvación).",
+        "No hay diferencia, ambos términos significan lo mismo."
+      ],
+      "respuesta_correcta": "La misericordia es no darnos lo que merecemos (el castigo), y la gracia es darnos lo que no merecemos (el favor y el regalo de la salvación).",
+      "reflexion": "Entender la distinción entre la misericordia y la gracia nos permite apreciar la profundidad del sacrificio de Cristo en la cruz y el regalo de la salvación que hemos recibido."
+    },
+    {
+      "id": "21",
+      "pregunta": "Según Filipenses 2:3, el apóstol Pablo nos exhorta a no hacer nada por contienda o vanagloria, sino con humildad. ¿Cómo podemos aplicar este principio para cultivar la humildad en nuestras relaciones diarias?",
+      "opciones": [
+        "Pensando que somos mejores que los demás.",
+        "Poniendo los intereses de los demás antes que los nuestros y reconociendo nuestras propias debilidades.",
+        "Haciendo siempre lo que los demás quieren, sin importar lo que pensemos."
+      ],
+      "respuesta_correcta": "Poniendo los intereses de los demás antes que los nuestros y reconociendo nuestras propias debilidades.",
+      "reflexion": "La humildad no es pensar menos de nosotros mismos, sino pensar menos en nosotros mismos. Es la actitud que nos permite amar y servir a los demás como Jesús lo hizo."
+    },
+    {
+      "id": "22",
+      "pregunta": "En Juan 14:16, Jesús promete que el Padre nos enviará a otro 'Consolador'. ¿Qué rol desempeña el Espíritu Santo en la vida de un creyente, según lo que nos revela el Nuevo Testamento?",
+      "opciones": [
+        "Es un ángel que nos protege.",
+        "Es una fuerza invisible que nos hace tener éxito en todo lo que hacemos.",
+        "Nos guía a toda verdad, nos consuela, nos capacita y nos revela a Cristo."
+      ],
+      "respuesta_correcta": "Nos guía a toda verdad, nos consuela, nos capacita y nos revela a Cristo.",
+      "reflexion": "El Espíritu Santo no es solo una idea, sino una persona de la Trinidad que vive en el creyente. Su presencia es fundamental para vivir una vida que honre a Dios y para entender Su Palabra."
+    },
+    {
+      "id": "23",
+      "pregunta": "La fe es un concepto central en la Biblia. Según Hebreos 11:1, ¿cómo se define la fe?",
+      "opciones": [
+        "La convicción de lo que se ve.",
+        "La certeza de lo que se espera y la convicción de lo que no se ve.",
+        "Un sentimiento de esperanza."
+      ],
+      "respuesta_correcta": "La certeza de lo que se espera y la convicción de lo que no se ve.",
+      "reflexion": "La fe bíblica no es una creencia ciega, sino una confianza firme y segura en las promesas de Dios, basadas en su carácter y fidelidad demostrada a lo largo de la historia."
+    },
+    {
+      "id": "24",
+      "pregunta": "El apóstol Pablo escribe que 'todas las cosas ayudan a bien a los que aman a Dios'. ¿Cómo se relaciona esta afirmación con la soberanía de Dios en medio del sufrimiento?",
+      "opciones": [
+        "Que los cristianos nunca sufren.",
+        "Que Dios no tiene control sobre las circunstancias difíciles.",
+        "Que Dios tiene un propósito redentor incluso en las situaciones más dolorosas y que Él puede usar el mal para lograr un bien mayor."
+      ],
+      "respuesta_correcta": "Que Dios tiene un propósito redentor incluso en las situaciones más dolorosas y que Él puede usar el mal para lograr un bien mayor.",
+      "reflexion": "Romanos 8:28 no es una promesa de que las cosas malas no nos pasarán, sino una garantía de que Dios puede obrar en ellas para nuestra santificación y Su gloria, si permanecemos en Él."
+    }
+  ]
+}
