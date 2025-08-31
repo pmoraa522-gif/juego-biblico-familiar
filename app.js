@@ -132,7 +132,83 @@ function mostrarSiguientePregunta() {
  * @param {string} respuestaSeleccionada - El texto de la opción elegida por el usuario.
  * @param {object} preguntaActual - El objeto de la pregunta actual.
  */
+
+// Variables globales para audio
+let audioContext;
+let sonidos = {};
+
+// Inicializar audio
+function inicializarAudio() {
+    try {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        // Cargar sonidos
+        cargarSonidos();
+    } catch (e) {
+        console.log("Audio no soportado en este navegador");
+    }
+}
+
+function cargarSonidos() {
+    // Sonidos básicos (puedes reemplazar con archivos reales después)
+    sonidos.correcto = () => {
+        if (!audioContext) return;
+        playTones([523.25, 659.25]); // Do y Mi
+    };
+    
+    sonidos.incorrecto = () => {
+        if (!audioContext) return;
+        playTones([392.00, 293.66]); // Sol y Re
+    };
+}
+
+function playTones(frequencies) {
+    const gainNode = audioContext.createGain();
+    gainNode.connect(audioContext.destination);
+    gainNode.gain.value = 0.3;
+
+    frequencies.forEach(freq => {
+        const oscillator = audioContext.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.value = freq;
+        oscillator.connect(gainNode);
+        oscillator.start();
+        oscillator.stop(audioContext.currentTime + 0.7);
+    });
+}
+
+// Modificar verificarRespuesta para incluir sonidos
 function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
+    document.querySelectorAll('.opcion-btn').forEach(btn => {
+        btn.disabled = true;
+    });
+
+    if (respuestaSeleccionada === preguntaActual.respuesta_correcta) {
+        mensajeFeedback.textContent = '¡Correcto!';
+        mensajeFeedback.classList.add('correcto');
+        score++;
+        if (sonidos.correcto) sonidos.correcto();
+        
+        // Animación para respuesta correcta
+        mensajeFeedback.style.animation = 'celebrar 0.5s ease';
+    } else {
+        mensajeFeedback.textContent = `Incorrecto. La respuesta era: ${preguntaActual.respuesta_correcta}`;
+        mensajeFeedback.classList.add('incorrecto');
+        if (sonidos.incorrecto) sonidos.incorrecto();
+    }
+    
+    document.getElementById('puntuacion-actual').textContent = `Puntos: ${score}`;
+
+    setTimeout(() => {
+        indicePreguntaActual++;
+        mostrarSiguientePregunta();
+    }, 2000);
+}
+
+// Llamar a inicializarAudio al cargar la página
+window.addEventListener('load', inicializarAudio);
+
+/*function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
     // Deshabilita los botones de opción para evitar múltiples clics
     document.querySelectorAll('.opcion-btn').forEach(btn => {
         btn.disabled = true;
@@ -155,7 +231,7 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
         indicePreguntaActual++;
         mostrarSiguientePregunta();
     }, 2000); // 2 segundos
-}
+}*/
 
 /**
  * Verifica si algún logro ha sido desbloqueado.
@@ -232,3 +308,4 @@ function terminarJuego() {
     btnAdultos.addEventListener('click', () => iniciarJuego('adultos'));
 
 })();
+
