@@ -4,6 +4,11 @@
 
 // Variable para almacenar los logros desbloqueados
 let logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
+try {
+    logrosDesbloqueados = JSON.parse(localStorage.getItem('logrosDesbloqueados')) || [];
+} catch (e) {
+    console.log('Error al cargar logros desde localStorage:', e);
+}
 
 // Almacena los datos de las preguntas después de cargarlos desde el archivo JSON
 let datosBiblicos;
