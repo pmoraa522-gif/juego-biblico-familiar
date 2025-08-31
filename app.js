@@ -230,4 +230,5 @@ function terminarJuego() {
     btnNinosNoLectores.addEventListener('click', () => iniciarJuego('ninos_no_lectores'));
     btnNinosLectores.addEventListener('click', () => iniciarJuego('ninos_lectores'));
     btnAdultos.addEventListener('click', () => iniciarJuego('adultos'));
+
 })();
