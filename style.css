@@ -78,4 +78,51 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+}
+
+/* Animaciones */
+@keyframes celebrar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); background-color: #d4edda; }
+    100% { transform: scale(1); }
+}
+
+@keyframes temblar {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.correcto {
+    animation: celebrar 0.5s ease;
+}
+
+.incorrecto {
+    animation: temblar 0.5s ease;
+}
+
+/* Estilos para botones de opciones visuales */
+.opcion-btn-visual {
+    width: 45%;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background: none;
+    border: 3px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.opcion-btn-visual:hover {
+    border-color: #4CAF50;
+    transform: scale(1.05);
+}
+
+.opcion-btn-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
