@@ -225,7 +225,8 @@ function verificarLogros() {
 // ====================================================================================
 
 // Carga los datos al iniciar la página
-cargarDatos();
+(async () => {
+    await cargarDatos();
 
 // Asigna la acción a cada botón del menú principal
 btnNinosNoLectores.addEventListener('click', () => iniciarJuego('ninos_no_lectores'));
