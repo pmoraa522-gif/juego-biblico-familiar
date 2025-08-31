@@ -147,6 +147,8 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
  */
 function terminarJuego() {
     opcionesContainer.innerHTML = '';
+    mensajeFeedback.textContent = '';
+    mensajeFeedback.className = 'feedback';
     preguntaTitulo.textContent = '¡Juego terminado!';
     preguntaTexto.textContent = `Has respondido correctamente a ${score} de ${preguntasActuales.length} preguntas.`;
     
@@ -154,6 +156,7 @@ function terminarJuego() {
     const btnReinicio = document.createElement('button');
     btnReinicio.textContent = 'Volver al inicio';
     btnReinicio.classList.add('btn');
+    opcionesContainer.appendChild(btnReinicio);
     btnRevisar.classList.add('review-btn');
     btnReinicio.addEventListener('click', () => {
         juegoView.classList.add('hidden');
