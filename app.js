@@ -146,23 +146,27 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
  * Muestra la pantalla final de resultados y lecciones.
  */
 function terminarJuego() {
+    // Limpia las opciones y el feedback de la pregunta anterior
     opcionesContainer.innerHTML = '';
     mensajeFeedback.textContent = '';
     mensajeFeedback.className = 'feedback';
+
+    // Muestra el mensaje final
     preguntaTitulo.textContent = '¡Juego terminado!';
     preguntaTexto.textContent = `Has respondido correctamente a ${score} de ${preguntasActuales.length} preguntas.`;
     
-    // Aquí podrías agregar un botón para volver a jugar
+    // Crea el botón para volver al inicio
     const btnReinicio = document.createElement('button');
     btnReinicio.textContent = 'Volver al inicio';
     btnReinicio.classList.add('btn');
-    opcionesContainer.appendChild(btnReinicio);
-    btnRevisar.classList.add('review-btn');
+    opcionesContainer.appendChild(btnReinicio); // <--- Solo esta línea es necesaria
+
+    // Asigna la acción de reiniciar al botón
     btnReinicio.addEventListener('click', () => {
+        // Oculta la vista del juego y muestra la de inicio
         juegoView.classList.add('hidden');
         inicioView.classList.remove('hidden');
     });
-    opcionesContainer.appendChild(btnReinicio);
 }
 
 // ====================================================================================
