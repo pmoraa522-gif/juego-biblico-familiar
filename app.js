@@ -83,13 +83,14 @@ function iniciarJuego(nivel) {
     preguntasActuales = preguntasActuales.sort(() => Math.random() - 0.5);
 
     mostrarSiguientePregunta();
+    actualizarBarraProgreso();
 }
 
 /**
  * Muestra la siguiente pregunta en la interfaz.
  */
 function mostrarSiguientePregunta() {
-    actualizarBarraProgreso();
+    
     // Si ya no hay más preguntas, termina el juego.
     if (indicePreguntaActual >= preguntasActuales.length) {
         terminarJuego();
@@ -127,6 +128,7 @@ function mostrarSiguientePregunta() {
         btn.addEventListener('click', () => verificarRespuesta(opcion, pregunta));
         opcionesContainer.appendChild(btn);
     });
+    actualizarBarraProgreso();
 }
 
 /**
@@ -181,7 +183,6 @@ function playTones(frequencies) {
 
 function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
     console.log("Verificando respuesta:", respuestaSeleccionada);
-    actualizarBarraProgreso();
     // Deshabilita los botones de opción
     const botonesOpciones = document.querySelectorAll('.opcion-btn');
     botonesOpciones.forEach(btn => {
@@ -226,35 +227,11 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
             terminarJuego();
         }
     }, 2500); // 2.5 segundos para leer el feedback y la lección
+    actualizarBarraProgreso();
 }
 
 // Llamar a inicializarAudio al cargar la página
 window.addEventListener('load', inicializarAudio);
-
-/*function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
-    // Deshabilita los botones de opción para evitar múltiples clics
-    document.querySelectorAll('.opcion-btn').forEach(btn => {
-        btn.disabled = true;
-    });
-
-    if (respuestaSeleccionada === preguntaActual.respuesta_correcta) {
-        mensajeFeedback.textContent = '¡Correcto!';
-        mensajeFeedback.classList.add('correcto');
-        score++; // Incrementa la puntuación
-    } else {
-        mensajeFeedback.textContent = `Incorrecto. La respuesta era: ${preguntaActual.respuesta_correcta}`;
-        mensajeFeedback.classList.add('incorrecto');
-    }
-
-    // Muestra la puntuación actual
-    puntuacionActual.textContent = `Puntos: ${score}`;
-
-    // Avanza a la siguiente pregunta después de un breve retraso
-    setTimeout(() => {
-        indicePreguntaActual++;
-        mostrarSiguientePregunta();
-    }, 2000); // 2 segundos
-}*/
 
 /**
  * Verifica si algún logro ha sido desbloqueado.
@@ -379,6 +356,7 @@ function reproducirSonido(tipo) {
         console.log("Audio no compatible");
     }
 }
+
 
 
 
