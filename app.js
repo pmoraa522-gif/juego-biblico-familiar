@@ -309,3 +309,11 @@ function terminarJuego() {
 
 })();
 
+// Actualizar la barra de progreso
+function actualizarProgreso() {
+    const porcentaje = (indicePreguntaActual / preguntasActuales.length) * 100;
+    document.querySelector('.progreso').style.width = porcentaje + '%';
+}
+
+// Llamar a actualizarProgreso después de cada pregunta
+// en verificarRespuesta y mostrarSiguientePregunta
