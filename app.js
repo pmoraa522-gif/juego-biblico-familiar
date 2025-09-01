@@ -305,7 +305,7 @@ function terminarJuego() {
         inicioView.classList.remove('hidden');
     });
 }
-
+}
 
 // ====================================================================================
 // INICIO DE LA APLICACIÓN
@@ -417,6 +417,7 @@ function mostrarContenidoAdicional(pregunta) {
     
     return tiempoVisualizacion;
 }
+
 
 
 
