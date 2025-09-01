@@ -90,11 +90,15 @@ function iniciarJuego(nivel) {
  * Muestra la siguiente pregunta en la interfaz.
  */
 function mostrarSiguientePregunta() {
+    // Oculta el contenido adicional de la pregunta anterior
+    document.getElementById('contenido-extra-container').classList.add('hidden');
     
-    // Si ya no hay más preguntas, termina el juego.
+    // Actualiza la barra de progreso
+    actualizarBarraProgreso();
+    
+    // Resto del código de la función...
     if (indicePreguntaActual >= preguntasActuales.length) {
         terminarJuego();
-        
         return;
     }
 
@@ -128,7 +132,6 @@ function mostrarSiguientePregunta() {
         btn.addEventListener('click', () => verificarRespuesta(opcion, pregunta));
         opcionesContainer.appendChild(btn);
     });
-    actualizarBarraProgreso();
 }
 
 /**
@@ -183,6 +186,7 @@ function playTones(frequencies) {
 
 function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
     console.log("Verificando respuesta:", respuestaSeleccionada);
+    
     // Deshabilita los botones de opción
     const botonesOpciones = document.querySelectorAll('.opcion-btn');
     botonesOpciones.forEach(btn => {
@@ -207,27 +211,27 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
         }
     }
     
-    // Muestra la lección si existe
-    if (preguntaActual.leccion) {
-        const leccionElement = document.createElement('p');
-        leccionElement.classList.add('leccion');
-        leccionElement.textContent = preguntaActual.leccion;
-        mensajeFeedback.appendChild(leccionElement);
-    }
-    
     // Actualiza la puntuación
     document.getElementById('puntuacion-actual').textContent = `Puntos: ${score}`;
     
+    // Actualiza la barra de progreso
+    actualizarBarraProgreso();
+    
+    // Muestra contenido adicional y obtiene el tiempo de visualización
+    const tiempoVisualizacion = mostrarContenidoAdicional(preguntaActual);
+    
     // Prepara la siguiente pregunta después de un delay
     setTimeout(() => {
+        // Oculta el contenido adicional
+        document.getElementById('contenido-extra-container').classList.add('hidden');
+        
         indicePreguntaActual++;
         if (indicePreguntaActual < preguntasActuales.length) {
             mostrarSiguientePregunta();
         } else {
             terminarJuego();
         }
-    }, 2500); // 2.5 segundos para leer el feedback y la lección
-    actualizarBarraProgreso();
+    }, tiempoVisualizacion);
 }
 
 // Llamar a inicializarAudio al cargar la página
@@ -271,6 +275,16 @@ function verificarLogros() {
  * Muestra la pantalla final de resultados y lecciones.
  */
 function terminarJuego() {
+    // Oculta el contenido adicional
+    document.getElementById('contenido-extra-container').classList.add('hidden');
+    
+    // Asegura que la barra de progreso esté al 100%
+    const barraProgreso = document.getElementById('barra-progreso');
+    const textoProgreso = document.getElementById('texto-progreso');
+    if (barraProgreso && textoProgreso) {
+        barraProgreso.style.width = '100%';
+        textoProgreso.textContent = '100%';
+
     opcionesContainer.innerHTML = '';
     mensajeFeedback.textContent = '';
     mensajeFeedback.className = 'feedback';
@@ -326,6 +340,19 @@ function actualizarBarraProgreso() {
 // Alternar modo alto contraste
 document.getElementById('btn-contraste').addEventListener('click', function() {
     document.body.classList.toggle('alto-contraste');
+    localStorage.setItem('altoContraste', document.body.classList.contains('alto-contraste'));
+    
+    // Si hay contenido visible, actualizar sus estilos
+    const contenedorExtra = document.getElementById('contenido-extra-container');
+    if (!contenedorExtra.classList.contains('hidden')) {
+        // Forzar actualización de estilos
+        const texto = document.getElementById('contenido-extra-texto').textContent;
+        mostrarContenidoAdicional({
+            leccion: texto.includes("Versículo clave") ? null : texto,
+            versiculo_clave: texto.includes("Versículo clave") ? texto.replace("Versículo clave: ", "") : null,
+            reflexion: texto.includes("Versículo clave") ? null : texto
+        });
+    }
 });
 
 // Función para reproducir sonidos simples
@@ -357,6 +384,39 @@ function reproducirSonido(tipo) {
     }
 }
 
+function mostrarContenidoAdicional(pregunta) {
+    const contenedor = document.getElementById('contenido-extra-container');
+    const texto = document.getElementById('contenido-extra-texto');
+    
+    // Determinar el tipo de contenido y el tiempo de visualización
+    let tipoContenido = '';
+    let tiempoVisualizacion = 2000; // Por defecto 2 segundos
+    
+    if (pregunta.leccion) {
+        texto.textContent = pregunta.leccion;
+        tipoContenido = 'leccion';
+        tiempoVisualizacion = 2000; // 2 segundos para lección
+    } else if (pregunta.versiculo_clave) {
+        texto.textContent = `Versículo clave: ${pregunta.versiculo_clave}`;
+        tipoContenido = 'versiculo';
+        tiempoVisualizacion = 2000; // 2 segundos para versículo
+    } else if (pregunta.reflexion) {
+        texto.textContent = pregunta.reflexion;
+        tipoContenido = 'reflexion';
+        tiempoVisualizacion = 3000; // 3 segundos para reflexión
+    }
+    
+    // Aplicar estilos según el tipo de contenido
+    contenedor.className = 'contenido-extra';
+    if (tipoContenido) {
+        contenedor.classList.add(`contenido-${tipoContenido}`);
+        contenedor.classList.remove('hidden');
+    } else {
+        contenedor.classList.add('hidden');
+    }
+    
+    return tiempoVisualizacion;
+}
 
 
 
