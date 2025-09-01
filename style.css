@@ -210,3 +210,52 @@ body {
     margin: 0;
 }
 
+/* Contenedor para contenido adicional */
+.contenido-extra {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease;
+}
+
+.contenido-extra.hidden {
+    display: none;
+}
+
+/* Estilos específicos para cada tipo de contenido */
+.contenido-leccion {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4CAF50;
+}
+
+.contenido-versiculo {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196F3;
+    font-style: italic;
+}
+
+.contenido-reflexion {
+    background-color: #fff3e0;
+    border-left: 4px solid #FF9800;
+}
+
+#contenido-extra-texto {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Para modo alto contraste */
+.alto-contraste .contenido-leccion {
+    background-color: #003300;
+    border-left: 4px solid #00ff00;
+}
+
+.alto-contraste .contenido-versiculo {
+    background-color: #000033;
+    border-left: 4px solid #0099ff;
+}
+
+.alto-contraste .contenido-reflexion {
+    background-color: #332100;
+    border-left: 4px solid #ff9900;
+}
