@@ -187,14 +187,11 @@ function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
         mensajeFeedback.textContent = '¡Correcto!';
         mensajeFeedback.classList.add('correcto');
         score++;
-        if (sonidos.correcto) sonidos.correcto();
-        
-        // Animación para respuesta correcta
-        mensajeFeedback.style.animation = 'celebrar 0.5s ease';
+        reproducirSonido('correcto'); // Sonido para acierto
     } else {
         mensajeFeedback.textContent = `Incorrecto. La respuesta era: ${preguntaActual.respuesta_correcta}`;
         mensajeFeedback.classList.add('incorrecto');
-        if (sonidos.incorrecto) sonidos.incorrecto();
+        reproducirSonido('incorrecto'); // Sonido para error
     }
     
     document.getElementById('puntuacion-actual').textContent = `Puntos: ${score}`;
@@ -322,3 +319,32 @@ function actualizarProgreso() {
 document.getElementById('btn-contraste').addEventListener('click', function() {
     document.body.classList.toggle('alto-contraste');
 });
+
+// Función para reproducir sonidos simples
+function reproducirSonido(tipo) {
+    if (!sonidosHabilitados) return;
+    
+    try {
+        // Crear sonidos simples con el Web Audio API
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        if (tipo === 'correcto') {
+            oscillator.frequency.value = 523.25; // Do
+            gainNode.gain.value = 0.3;
+        } else if (tipo === 'incorrecto') {
+            oscillator.frequency.value = 392.00; // Sol
+            gainNode.gain.value = 0.2;
+        }
+        
+        oscillator.start();
+        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.7);
+        oscillator.stop(audioContext.currentTime + 0.7);
+    } catch (e) {
+        console.log("Audio no compatible");
+    }
+}
