@@ -89,9 +89,11 @@ function iniciarJuego(nivel) {
  * Muestra la siguiente pregunta en la interfaz.
  */
 function mostrarSiguientePregunta() {
+    actualizarBarraProgreso();
     // Si ya no hay más preguntas, termina el juego.
     if (indicePreguntaActual >= preguntasActuales.length) {
         terminarJuego();
+        
         return;
     }
 
@@ -179,7 +181,7 @@ function playTones(frequencies) {
 
 function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
     console.log("Verificando respuesta:", respuestaSeleccionada);
-    
+    actualizarBarraProgreso();
     // Deshabilita los botones de opción
     const botonesOpciones = document.querySelectorAll('.opcion-btn');
     botonesOpciones.forEach(btn => {
@@ -377,6 +379,7 @@ function reproducirSonido(tipo) {
         console.log("Audio no compatible");
     }
 }
+
 
 
 
