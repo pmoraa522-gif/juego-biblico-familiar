@@ -24,12 +24,15 @@
 
         <div id="juego-view" class="view hidden">
             <!-- Añadir en la vista de juego -->
-<div class="barra-progreso">
-    <div class="progreso"></div>
-</div>
-    <div class="info-juego">
-        <p id="puntuacion-actual">Puntos: 0</p>
+<div class="info-juego">
+    <p id="puntuacion-actual">Puntos: 0</p>
+    <div class="barra-progreso-container">
+        <div class="barra-progreso">
+            <div class="progreso" id="barra-progreso"></div>
+        </div>
+        <span id="texto-progreso">0%</span>
     </div>
+</div>
     <div id="leccion-container" class="leccion-container hidden">
     <p id="leccion-texto"></p>
 </div>
@@ -50,5 +53,6 @@
 </body>
 
 </html>
+
 
 
