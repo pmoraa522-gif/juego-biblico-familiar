@@ -126,3 +126,35 @@ body {
     height: auto;
     border-radius: 8px;
 }
+
+/* Mejoras para botones de niños no lectores */
+.btn-grande {
+    padding: 20px;
+    font-size: 1.5rem;
+    margin: 15px auto;
+}
+
+/* Contenedores más visuales */
+.opcion-visual {
+    display: inline-block;
+    width: 45%;
+    margin: 10px;
+    padding: 15px;
+    border: 3px solid #4CAF50;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.opcion-visual:hover {
+    background-color: #e8f5e9;
+    transform: scale(1.05);
+}
+
+.opcion-visual img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
