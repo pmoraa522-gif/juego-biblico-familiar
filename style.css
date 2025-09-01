@@ -173,3 +173,21 @@ body {
     width: 0%;
     transition: width 0.3s ease;
 }
+
+/* Modo alto contraste */
+.alto-contraste {
+    background-color: #000;
+    color: #fff;
+}
+
+.alto-contraste .btn {
+    background-color: #000;
+    color: #ff0;
+    border: 2px solid #ff0;
+}
+
+.alto-contraste .view {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #ff0;
+}
