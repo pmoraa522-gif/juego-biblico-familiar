@@ -177,29 +177,53 @@ function playTones(frequencies) {
     });
 }
 
-// Modificar verificarRespuesta para incluir sonidos
 function verificarRespuesta(respuestaSeleccionada, preguntaActual) {
-    document.querySelectorAll('.opcion-btn').forEach(btn => {
+    console.log("Verificando respuesta:", respuestaSeleccionada);
+    
+    // Deshabilita los botones de opción
+    const botonesOpciones = document.querySelectorAll('.opcion-btn');
+    botonesOpciones.forEach(btn => {
         btn.disabled = true;
     });
 
-    if (respuestaSeleccionada === preguntaActual.respuesta_correcta) {
+    // Verifica si la respuesta es correcta
+    const esCorrecta = respuestaSeleccionada === preguntaActual.respuesta_correcta;
+    
+    if (esCorrecta) {
         mensajeFeedback.textContent = '¡Correcto!';
         mensajeFeedback.classList.add('correcto');
         score++;
-        reproducirSonido('correcto'); // Sonido para acierto
+        if (sonidosHabilitados) {
+            reproducirSonido('correcto');
+        }
     } else {
-        mensajeFeedback.textContent = `Incorrecto. La respuesta era: ${preguntaActual.respuesta_correcta}`;
+        mensajeFeedback.textContent = `Incorrecto. La respuesta correcta es: ${preguntaActual.respuesta_correcta}`;
         mensajeFeedback.classList.add('incorrecto');
-        reproducirSonido('incorrecto'); // Sonido para error
+        if (sonidosHabilitados) {
+            reproducirSonido('incorrecto');
+        }
     }
     
+    // Muestra la lección si existe
+    if (preguntaActual.leccion) {
+        const leccionElement = document.createElement('p');
+        leccionElement.classList.add('leccion');
+        leccionElement.textContent = preguntaActual.leccion;
+        mensajeFeedback.appendChild(leccionElement);
+    }
+    
+    // Actualiza la puntuación
     document.getElementById('puntuacion-actual').textContent = `Puntos: ${score}`;
-
+    
+    // Prepara la siguiente pregunta después de un delay
     setTimeout(() => {
         indicePreguntaActual++;
-        mostrarSiguientePregunta();
-    }, 2000);
+        if (indicePreguntaActual < preguntasActuales.length) {
+            mostrarSiguientePregunta();
+        } else {
+            terminarJuego();
+        }
+    }, 2500); // 2.5 segundos para leer el feedback y la lección
 }
 
 // Llamar a inicializarAudio al cargar la página
@@ -348,4 +372,5 @@ function reproducirSonido(tipo) {
         console.log("Audio no compatible");
     }
 }
+
 
