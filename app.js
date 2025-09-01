@@ -317,3 +317,8 @@ function actualizarProgreso() {
 
 // Llamar a actualizarProgreso después de cada pregunta
 // en verificarRespuesta y mostrarSiguientePregunta
+
+// Alternar modo alto contraste
+document.getElementById('btn-contraste').addEventListener('click', function() {
+    document.body.classList.toggle('alto-contraste');
+});
