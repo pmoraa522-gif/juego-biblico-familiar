@@ -1,7 +1,7 @@
 // ====================================================================================
 // VARIABLES Y ELEMENTOS HTML
 // ====================================================================================
-
+let sonidosHabilitados = true;
 // Almacena los datos de las preguntas después de cargarlos desde el archivo JSON
 let datosBiblicos;
 
@@ -348,3 +348,4 @@ function reproducirSonido(tipo) {
         console.log("Audio no compatible");
     }
 }
+
