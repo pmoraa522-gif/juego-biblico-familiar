@@ -191,3 +191,22 @@ body {
     color: #fff;
     border: 2px solid #ff0;
 }
+
+.leccion-container {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    border-radius: 4px;
+}
+
+.leccion-container.hidden {
+    display: none;
+}
+
+#leccion-texto {
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
