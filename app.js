@@ -330,10 +330,15 @@ function terminarJuego() {
 
 })();
 
-// Actualizar la barra de progreso
-function actualizarProgreso() {
+function actualizarBarraProgreso() {
     const porcentaje = (indicePreguntaActual / preguntasActuales.length) * 100;
-    document.querySelector('.progreso').style.width = porcentaje + '%';
+    const barraProgreso = document.getElementById('barra-progreso');
+    const textoProgreso = document.getElementById('texto-progreso');
+    
+    if (barraProgreso && textoProgreso) {
+        barraProgreso.style.width = porcentaje + '%';
+        textoProgreso.textContent = Math.round(porcentaje) + '%';
+    }
 }
 
 // Llamar a actualizarProgreso después de cada pregunta
@@ -372,5 +377,6 @@ function reproducirSonido(tipo) {
         console.log("Audio no compatible");
     }
 }
+
 
 
